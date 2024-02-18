@@ -6,6 +6,7 @@ import com.velocitypowered.api.event.proxy.ProxyInitializeEvent
 import com.velocitypowered.api.plugin.Plugin
 import com.velocitypowered.api.plugin.annotation.DataDirectory
 import com.velocitypowered.api.proxy.ProxyServer
+import dev.rafi.vitelist.storage.Config
 import org.slf4j.Logger
 import java.nio.file.Path
 
@@ -23,30 +24,31 @@ class ViteList @Inject constructor(
 
     @Subscribe
     private fun onProxyInit(event: ProxyInitializeEvent) {
-        initialize(this);
+        initialize(this)
+        Config("config.yml")
     }
 
     companion object {
-        private lateinit var inst: ViteList;
+        private lateinit var inst: ViteList
 
         private fun initialize(viteList: ViteList) {
             inst = viteList
         }
 
         private fun getInst(): ViteList {
-            return inst;
+            return inst
         }
 
         fun getProxyServer(): ProxyServer {
-            return getInst().proxyServer;
+            return getInst().proxyServer
         }
 
         fun getLogger(): Logger {
-            return getInst().logger;
+            return getInst().logger
         }
 
         fun getDataDir(): Path {
-            return getInst().dataDir;
+            return getInst().dataDir
         }
     }
 }
