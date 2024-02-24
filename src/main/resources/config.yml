@@ -1,1 +1,7 @@
 config-version: 1
+
+messages:
+  prefix: "&7[&5ViteList&7] &k&lii"
+  no-permission: "%prefix% &cInsufficient &7permissions"
+  reload-success: "%prefix% &7reload &asuccessful"
+  reload-fail: "%prefix% &7reload &cfailed"
