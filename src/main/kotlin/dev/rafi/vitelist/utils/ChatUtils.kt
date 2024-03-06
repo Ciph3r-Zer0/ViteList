@@ -9,7 +9,7 @@ class ChatUtils {
             return Component.text(msg.replace('&', '§'))
         }
 
-        public fun sendMessage(source: CommandSource, msg: String) {
+        fun sendMessage(source: CommandSource, msg: String) {
             source.sendMessage(colorize(msg))
         }
     }

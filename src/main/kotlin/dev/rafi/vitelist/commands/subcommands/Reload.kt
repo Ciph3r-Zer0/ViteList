@@ -17,7 +17,6 @@ class Reload {
             } else {
                 ChatUtils.sendMessage(source, Config.RELOAD_FAIL)
             }
-            println(Config.PREFIX)
         }
     }
 }

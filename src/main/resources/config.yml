@@ -1,5 +1,13 @@
 config-version: 1
 
+database:
+  type: SQLite
+  host: localhost
+  port: 3306
+  name: vite_list
+  username: root
+  password: Admin@123
+
 messages:
   prefix: "&7[&5ViteList&7] &k&lii"
   no-permission: "%prefix% &cInsufficient &7permissions"

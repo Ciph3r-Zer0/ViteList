@@ -7,6 +7,7 @@ import com.velocitypowered.api.plugin.Plugin
 import com.velocitypowered.api.plugin.annotation.DataDirectory
 import com.velocitypowered.api.proxy.ProxyServer
 import dev.rafi.vitelist.commands.WLCommand
+import dev.rafi.vitelist.database.DataSource
 import dev.rafi.vitelist.storage.Config
 import org.slf4j.Logger
 import java.nio.file.Path
@@ -28,6 +29,7 @@ class ViteList @Inject constructor(
         initialize(this)
         Config("config.yml")
         WLCommand()
+        DataSource()
     }
 
     companion object {
