@@ -8,7 +8,10 @@ import com.velocitypowered.api.plugin.annotation.DataDirectory
 import com.velocitypowered.api.proxy.ProxyServer
 import dev.rafi.vitelist.commands.WLCommand
 import dev.rafi.vitelist.database.DataSource
+import dev.rafi.vitelist.database.model.Server
 import dev.rafi.vitelist.storage.Config
+import org.jetbrains.exposed.sql.insertIgnore
+import org.jetbrains.exposed.sql.transactions.transaction
 import org.slf4j.Logger
 import java.nio.file.Path
 
@@ -19,9 +22,9 @@ import java.nio.file.Path
     version = "1.0.0"
 )
 class ViteList @Inject constructor(
-    public val proxyServer: ProxyServer,
-    public val logger: Logger,
-    @DataDirectory public val dataDir: Path
+    val proxyServer: ProxyServer,
+    val logger: Logger,
+    @DataDirectory val dataDir: Path
 ) {
 
     @Subscribe
@@ -30,6 +33,14 @@ class ViteList @Inject constructor(
         Config("config.yml")
         WLCommand()
         DataSource()
+
+        transaction {
+            getProxyServer().allServers.forEach() { server ->
+                Server.insertIgnore {
+                    it[name] = server.serverInfo.name
+                }
+            }
+        }
     }
 
     companion object {
