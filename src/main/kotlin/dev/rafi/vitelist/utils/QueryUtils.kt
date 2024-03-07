@@ -9,6 +9,5 @@ fun serverExists(name: String): Boolean {
     transaction {
         exists = Server.select(Server.name).where {Server.name eq name}.withDistinct().empty()
     }
-
     return !exists
 }

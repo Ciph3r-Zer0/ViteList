@@ -28,12 +28,17 @@ class Config constructor(fileName: String) : ConfigModel(fileName) {
         lateinit var PREFIX: String
         lateinit var NO_PERMISSION: String
         lateinit var SERVER_NOT_FOUND: String
+        lateinit var WRONG_USAGE: String
         lateinit var RELOAD_SUCCESS: String
         lateinit var RELOAD_FAIL: String
         lateinit var ENABLE_GLOBAL: String
         lateinit var ENABLE_SERVER: String
         lateinit var DISABLE_GLOBAL: String
         lateinit var DISABLE_SERVER: String
+        lateinit var ADD_GLOBAL: String
+        lateinit var ADD_SERVER: String
+        lateinit var REMOVE_GLOBAL: String
+        lateinit var REMOVE_SERVER: String
 
 
         private fun init(config: YamlDocument) {
@@ -54,12 +59,17 @@ class Config constructor(fileName: String) : ConfigModel(fileName) {
             PREFIX = cfg.getString("messages.prefix")
             NO_PERMISSION = setPlaceHolders(cfg.getString("messages.no-permission"))
             SERVER_NOT_FOUND = setPlaceHolders(cfg.getString("messages.server-not-found"))
+            WRONG_USAGE = setPlaceHolders(cfg.getString("messages.wrong-usage"))
             RELOAD_SUCCESS = setPlaceHolders(cfg.getString("messages.reload-success"))
             RELOAD_FAIL = setPlaceHolders(cfg.getString("messages.reload-fail"))
             ENABLE_GLOBAL = setPlaceHolders(cfg.getString("messages.enable-global"))
             ENABLE_SERVER = setPlaceHolders(cfg.getString("messages.enable-server"))
             DISABLE_GLOBAL = setPlaceHolders(cfg.getString("messages.disable-global"))
             DISABLE_SERVER = setPlaceHolders(cfg.getString("messages.disable-server"))
+            ADD_GLOBAL = setPlaceHolders(cfg.getString("messages.add-global"))
+            ADD_SERVER = setPlaceHolders(cfg.getString("messages.add-server"))
+            REMOVE_GLOBAL = setPlaceHolders(cfg.getString("messages.remove-global"))
+            REMOVE_SERVER = setPlaceHolders(cfg.getString("messages.remove-server"))
         }
 
         private fun setPlaceHolders(msg : String) : String {

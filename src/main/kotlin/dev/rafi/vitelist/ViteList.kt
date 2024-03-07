@@ -38,6 +38,7 @@ class ViteList @Inject constructor(
             getProxyServer().allServers.forEach() { server ->
                 Server.insertIgnore {
                     it[name] = server.serverInfo.name
+                    it[players] = ""
                 }
             }
         }

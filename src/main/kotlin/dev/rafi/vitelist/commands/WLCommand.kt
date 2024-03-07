@@ -2,9 +2,8 @@ package dev.rafi.vitelist.commands
 
 import com.velocitypowered.api.command.SimpleCommand
 import dev.rafi.vitelist.ViteList
-import dev.rafi.vitelist.commands.subcommands.off
-import dev.rafi.vitelist.commands.subcommands.on
-import dev.rafi.vitelist.commands.subcommands.reload
+import dev.rafi.vitelist.commands.subcommands.*
+import dev.rafi.vitelist.storage.Config
 import dev.rafi.vitelist.utils.sendMessage
 
 class WLCommand : SimpleCommand {
@@ -29,6 +28,12 @@ class WLCommand : SimpleCommand {
             on(source, args)
         } else if (args[0].equals("off", true)) {
             off(source, args)
+        } else if (args[0].equals("add", true)) {
+            add(source, args)
+        } else if (args[0].equals("remove", true)) {
+            remove(source, args)
+        } else {
+            sendMessage(source, Config.WRONG_USAGE)
         }
     }
 }
