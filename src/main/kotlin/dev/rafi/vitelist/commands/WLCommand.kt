@@ -2,8 +2,10 @@ package dev.rafi.vitelist.commands
 
 import com.velocitypowered.api.command.SimpleCommand
 import dev.rafi.vitelist.ViteList
-import dev.rafi.vitelist.commands.subcommands.Reload
-import dev.rafi.vitelist.utils.ChatUtils
+import dev.rafi.vitelist.commands.subcommands.off
+import dev.rafi.vitelist.commands.subcommands.on
+import dev.rafi.vitelist.commands.subcommands.reload
+import dev.rafi.vitelist.utils.sendMessage
 
 class WLCommand : SimpleCommand {
     init {
@@ -16,12 +18,17 @@ class WLCommand : SimpleCommand {
         val source = invocation.source();
         val args = invocation.arguments();
 
-        if (args.isEmpty()) ChatUtils.sendMessage(source, "&7[&5ViteList&7] &k&lii &7Version &f&l1.0.0 &7by &f&lRafi &7(&f&lA.K.A Cipher&7)")
+        if (args.isEmpty()) {
+            sendMessage(source, "&7[&5ViteList&7] &k&lii &7Version &f&l1.0.0 &7by &f&lRafi &7(&f&lA.K.A Cipher&7)")
+            return
+        }
 
-        if (args.isNotEmpty()) {
-            if (args[0].equals("reload", true)) {
-                Reload.reload(source, args)
-            }
+        if (args[0].equals("reload", true)) {
+            reload(source, args)
+        } else if (args[0].equals("on", true)) {
+            on(source, args)
+        } else if (args[0].equals("off", true)) {
+            off(source, args)
         }
     }
 }

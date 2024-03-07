@@ -11,5 +11,10 @@ database:
 messages:
   prefix: "&7[&5ViteList&7] &k&lii"
   no-permission: "%prefix% &cInsufficient &7permissions"
+  server-not-found: "%prefix% &7Specified server &f%server% &7does &cNOT &7exist"
   reload-success: "%prefix% &7reload &asuccessful"
   reload-fail: "%prefix% &7reload &cfailed"
+  enable-global: "%prefix% &7Whitelist has been &aenabled &7globally"
+  enable-server: "%prefix% &7Whitelist has been &aenabled &7in &f%server%"
+  disable-global: "%prefix% &7Whitelist has been &cdisabled &7globally"
+  disable-server: "%prefix% &7Whitelist has been &cdisabled &7in &f%server%"

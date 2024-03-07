@@ -27,8 +27,13 @@ class Config constructor(fileName: String) : ConfigModel(fileName) {
 
         lateinit var PREFIX: String
         lateinit var NO_PERMISSION: String
+        lateinit var SERVER_NOT_FOUND: String
         lateinit var RELOAD_SUCCESS: String
         lateinit var RELOAD_FAIL: String
+        lateinit var ENABLE_GLOBAL: String
+        lateinit var ENABLE_SERVER: String
+        lateinit var DISABLE_GLOBAL: String
+        lateinit var DISABLE_SERVER: String
 
 
         private fun init(config: YamlDocument) {
@@ -48,8 +53,13 @@ class Config constructor(fileName: String) : ConfigModel(fileName) {
 
             PREFIX = cfg.getString("messages.prefix")
             NO_PERMISSION = setPlaceHolders(cfg.getString("messages.no-permission"))
+            SERVER_NOT_FOUND = setPlaceHolders(cfg.getString("messages.server-not-found"))
             RELOAD_SUCCESS = setPlaceHolders(cfg.getString("messages.reload-success"))
             RELOAD_FAIL = setPlaceHolders(cfg.getString("messages.reload-fail"))
+            ENABLE_GLOBAL = setPlaceHolders(cfg.getString("messages.enable-global"))
+            ENABLE_SERVER = setPlaceHolders(cfg.getString("messages.enable-server"))
+            DISABLE_GLOBAL = setPlaceHolders(cfg.getString("messages.disable-global"))
+            DISABLE_SERVER = setPlaceHolders(cfg.getString("messages.disable-server"))
         }
 
         private fun setPlaceHolders(msg : String) : String {
