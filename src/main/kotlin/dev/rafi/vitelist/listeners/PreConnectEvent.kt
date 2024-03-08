@@ -24,7 +24,7 @@ class PreConnectEvent {
 
         val isPlayerWhitelisted = isPlayerWhitelisted(player.username, server.serverInfo.name)
 
-        if (!isPlayerWhitelisted) return
+        if (isPlayerWhitelisted) return
 
         event.result = ServerResult.denied()
         sendMessage(player, Config.SERVER_SWITCH)

@@ -26,7 +26,7 @@ class InitialServerEvent {
 
         val isPlayerWhitelisted = isPlayerWhitelisted(player.username, server.get().serverInfo.name)
 
-        if (!isPlayerWhitelisted) return
+        if (isPlayerWhitelisted) return
 
         player.disconnect(colorize(Config.KICK))
     }

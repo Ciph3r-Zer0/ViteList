@@ -37,7 +37,7 @@ class DataSource {
 
     private fun sqLite() {
         val sqLiteDriver = "org.sqlite.JDBC"
-        val dbFile = File(ViteList.getDataDir().toFile(), "data.db")
+        val dbFile = File(ViteList.getDataDir().toFile(), "${Config.DB_NAME}.db")
 
         if (!(dbFile.exists())) dbFile.createNewFile()
 
