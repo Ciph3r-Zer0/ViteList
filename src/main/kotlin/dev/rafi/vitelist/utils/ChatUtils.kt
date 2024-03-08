@@ -4,7 +4,7 @@ import com.velocitypowered.api.command.CommandSource
 import net.kyori.adventure.text.Component
 
 
-private fun colorize(msg: String) : Component {
+fun colorize(msg: String) : Component {
     return Component.text(msg.replace('&', '§'))
 }
 fun sendMessage(source: CommandSource, msg: String) {

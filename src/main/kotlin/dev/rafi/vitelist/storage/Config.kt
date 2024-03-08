@@ -39,6 +39,8 @@ class Config constructor(fileName: String) : ConfigModel(fileName) {
         lateinit var ADD_SERVER: String
         lateinit var REMOVE_GLOBAL: String
         lateinit var REMOVE_SERVER: String
+        lateinit var KICK: String
+        lateinit var SERVER_SWITCH: String
 
 
         private fun init(config: YamlDocument) {
@@ -70,6 +72,8 @@ class Config constructor(fileName: String) : ConfigModel(fileName) {
             ADD_SERVER = setPlaceHolders(cfg.getString("messages.add-server"))
             REMOVE_GLOBAL = setPlaceHolders(cfg.getString("messages.remove-global"))
             REMOVE_SERVER = setPlaceHolders(cfg.getString("messages.remove-server"))
+            KICK = setPlaceHolders(cfg.getString("messages.kick"))
+            SERVER_SWITCH = setPlaceHolders(cfg.getString("messages.server-switch"))
         }
 
         private fun setPlaceHolders(msg : String) : String {

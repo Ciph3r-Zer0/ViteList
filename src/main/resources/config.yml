@@ -23,3 +23,5 @@ messages:
   add-server: "%prefix% &7User &f%user% &7has been &aAdded &7to whitelist in &f%server%"
   remove-global: "%prefix% &7User &f%user% &7has been &cRemoved &7from global whitelist"
   remove-server: "%prefix% &7User &f%user% &7has been &cRemoved &7from whitelist in &f%server%"
+  kick: "&7You're &cNot &7whitelisted at this server"
+  server-switch: "%prefix% &7You are &cNot &7whitelisted in this server"

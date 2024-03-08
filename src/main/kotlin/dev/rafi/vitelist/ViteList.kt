@@ -9,6 +9,8 @@ import com.velocitypowered.api.proxy.ProxyServer
 import dev.rafi.vitelist.commands.WLCommand
 import dev.rafi.vitelist.database.DataSource
 import dev.rafi.vitelist.database.model.Server
+import dev.rafi.vitelist.listeners.InitialServerEvent
+import dev.rafi.vitelist.listeners.PreConnectEvent
 import dev.rafi.vitelist.storage.Config
 import org.jetbrains.exposed.sql.insertIgnore
 import org.jetbrains.exposed.sql.transactions.transaction
@@ -19,7 +21,8 @@ import java.nio.file.Path
 @Plugin(
     id = "vitelist",
     name = "ViteList",
-    version = "1.0.0"
+    version = "1.0.0",
+    authors = ["Rafi"]
 )
 class ViteList @Inject constructor(
     val proxyServer: ProxyServer,
@@ -33,6 +36,8 @@ class ViteList @Inject constructor(
         Config("config.yml")
         WLCommand()
         DataSource()
+        InitialServerEvent()
+        PreConnectEvent()
 
         transaction {
             getProxyServer().allServers.forEach() { server ->
@@ -51,7 +56,7 @@ class ViteList @Inject constructor(
             inst = viteList
         }
 
-        private fun getInst(): ViteList {
+        fun getInst(): ViteList {
             return inst
         }
 
