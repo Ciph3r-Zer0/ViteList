@@ -34,8 +34,6 @@ kotlin {
 tasks {
     shadowJar {
         relocate("dev.dejvokep.boostedyaml", "dev.rafi.vitelist.libs.boostedyaml")
-        relocate("com.mysql.jdbc", "dev.rafi.vitelist.libs.jdbc")
-        relocate("org.sqlite", "dev.rafi.vitelist.libs.sqlite")
     }
     runVelocity {
         velocityVersion("3.2.0-SNAPSHOT")

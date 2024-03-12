@@ -1,5 +1,4 @@
-config-version: 1
-
+# Available types: SQLite, MySQL
 database:
   type: SQLite
   host: localhost
@@ -25,3 +24,6 @@ messages:
   remove-server: "%prefix% &7User &f%user% &7has been &cRemoved &7from whitelist in &f%server%"
   kick: "&7You're &cNot &7whitelisted at this server"
   server-switch: "%prefix% &7You are &cNot &7whitelisted in this server"
+
+# Do not touch!
+config-version: 1
