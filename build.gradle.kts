@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.archivesName
+
 plugins {
     kotlin("jvm") version "1.9.22"
     kotlin("kapt") version "1.9.22"
@@ -24,7 +26,7 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-dao:0.48.0")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.48.0")
     implementation("mysql:mysql-connector-java:8.0.33")
-    implementation("org.xerial:sqlite-jdbc:3.45.1.0")
+    implementation("org.xerial:sqlite-jdbc:3.45.2.0")
 }
 
 kotlin {
@@ -35,6 +37,7 @@ tasks {
     shadowJar {
         relocate("dev.dejvokep.boostedyaml", "dev.rafi.vitelist.libs.boostedyaml")
     }
+
     runVelocity {
         velocityVersion("3.2.0-SNAPSHOT")
     }

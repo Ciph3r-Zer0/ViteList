@@ -14,8 +14,8 @@ class WLCommand : SimpleCommand {
     }
 
     override fun execute(invocation: SimpleCommand.Invocation) {
-        val source = invocation.source();
-        val args = invocation.arguments();
+        val source = invocation.source()
+        val args = invocation.arguments()
 
         if (args.isEmpty()) {
             sendMessage(source, "&7[&5ViteList&7] &k&lii &7Version &f&l1.0.0 &7by &f&lRafi &7(&f&lA.K.A Cipher&7)")
