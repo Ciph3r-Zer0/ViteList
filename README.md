@@ -20,7 +20,9 @@ Installing is as easy as it gets:
 
 ## Usage
 
-Explain how to use your project. This section should cover:
+You can see a list of commands and permissions below. parameters covered with `()` are optional parameters
+meaning they can be ignored, and the ones that are covered with `<>` are required parameters meaning
+you should feed those parameters
 
 1. Commands:
     * **/WhiteList on `(serverName)`** - Enables whitelist globally or per server
